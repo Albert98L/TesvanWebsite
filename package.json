@@ -14,6 +14,20 @@
     "mocha": "^10.2.0"
   },
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
     "cypress": "^13.0.0"
+  },
+  "reporter": "@shelex/cypress-allure-plugin",
+  "reporterOptions": {
+    "mocha": {
+      "reporterOptions": "mocha-allure-reporter"
+    }
+  },
+
+
+  "reporter": "cypress-allure-plugin",
+  "reporterOptions": {
+    "standard": "Allure"
   }
+
 }
