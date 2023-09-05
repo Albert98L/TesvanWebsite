@@ -1,1 +1,1 @@
-{"uid":"98d3104e051c652961429bf95fa0b5d6","name":"suites","children":[]}
+{"uid":"98d3104e051c652961429bf95fa0b5d6","name":"suites","children":[{"name":"Tesvan Home Page","children":[{"name":"Verify that home page opened correctly ","uid":"c15acab751daed8b","parentUid":"1c2ff7cb71671d1f694d5474f945ec5b","status":"passed","time":{"start":1693940457491,"stop":1693940462363,"duration":4872},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":2,"retriesStatusChange":false,"parameters":[],"tags":[]}],"uid":"1c2ff7cb71671d1f694d5474f945ec5b"}]}

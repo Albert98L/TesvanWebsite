@@ -6,7 +6,9 @@ require('cypress-xpath');
 describe("Tesvan Home Page", () => {
     beforeEach(() => {
         functions.homeurl()
+        Cypress.env("")
     })
+
 
     it("Verify that home page opened correctly ",()=>{
         cy.title().should('include' , "TESVAN A COMPANY OF QUALITY")
