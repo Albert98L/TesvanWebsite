@@ -8,7 +8,7 @@ describe("Tesvan Home Page", () => {
         functions.homeurl()
     })
 
-    it("Verify that home page opened correctlybff ",()=>{
+    it("Verify that home page opened correctly ",()=>{
         cy.title().should('include' , "TESVAN A COMPANY OF QUALITY")
         verifications.expect().beVisibleTesvanLogo((selectors.logoTesvan()))
 
