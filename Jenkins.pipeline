@@ -12,4 +12,5 @@ options {
             stage('Run tests') {
                  bat  "npx cypress run --spec 'cypress/e2e/TesvanHomePage/VerifyHomePage.cy.js'"
            }
+allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
       }
