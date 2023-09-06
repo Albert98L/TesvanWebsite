@@ -2,10 +2,10 @@
 
 node {
     stage('npm ci') {
-      sh "npm ci"
+      bat  "npm ci"
     }
 
             stage('Run tests') {
-                 sh "npx cypress run --spec 'cypress/e2e/TesvanHomePage/VerifyHomePage.cy.js'"
+                 bat  "npx cypress run --spec 'cypress/e2e/TesvanHomePage/VerifyHomePage.cy.js'"
            }
       }
