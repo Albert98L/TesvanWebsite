@@ -1,8 +1,6 @@
 
 
 node {
-    checkout scm
-
     stage('npm ci') {
       sh "npm ci"
     }
