@@ -1,0 +1,13 @@
+
+
+node {
+    checkout scm
+
+    stage('npm ci') {
+      sh "npm ci"
+    }
+
+            stage('Run tests') {
+                 sh "npx cypress run --spec 'cypress/e2e/TesvanHomePage/VerifyHomePage.cy.js'"
+           }
+      }
