@@ -1,6 +1,10 @@
 
 
 node {
+options {
+        ansiColor('xterm')
+    }
+
     stage('npm ci') {
       bat  "npm install"
     }
