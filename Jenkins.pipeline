@@ -2,7 +2,7 @@
 
 node {
     stage('npm ci') {
-      bat  "npm ci"
+      bat  "npm install"
     }
 
             stage('Run tests') {
