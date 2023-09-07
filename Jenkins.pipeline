@@ -1,13 +1,15 @@
 
 
 node {
-    checkout scm
+options {
+        ansiColor('xterm')
+    }
 
     stage('npm ci') {
-      sh "npm ci"
+      bat  "npm install"
     }
 
             stage('Run tests') {
-                 sh "npx cypress run --spec 'cypress/e2e/TesvanHomePage/VerifyHomePage.cy.js'"
+                 bat  "npx cypress run --spec 'cypress/e2e/TesvanHomePage/VerifyHomePage.cy.js'"
            }
       }
