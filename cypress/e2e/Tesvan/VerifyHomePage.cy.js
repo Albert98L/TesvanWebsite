@@ -4,11 +4,12 @@ import verifications from "../../POM/HomePage/verifications";
 
 require('cypress-xpath');
 
+
 describe("Tesvan Home Page", () => {
     beforeEach(() => {
         functions.homeurl();
         cy.intercept("HEAD","en").as("TESVANHomePage");
-        cy.intercept("GET","video/Homepage.mp4").as("BackVideo");
+        cy.intercept("GET","/video/Homepage.mp4").as("BackVideo");
         cy.intercept("HEAD","en/cases/customertimes").as("Customertimes");
         cy.intercept("HEAD","en/cases/rocky_mountains").as("Rocky_mountains");
         cy.intercept("HEAD","en/cases/summerize").as("Summerize");
@@ -41,7 +42,7 @@ describe("Tesvan Home Page", () => {
     })
 
     it("Background Video Loading Test", () => {
-        cy.wait(1000);
+        cy.wait("@BackVideo",{timeout:16000});
         homepage.videoLoop().should("have.attr", "loop");
         homepage.bannerVideo().should("have.attr", "src").and("not.be.empty");
     })
@@ -53,7 +54,11 @@ describe("Tesvan Home Page", () => {
         verifications.expect().beVisibleVerification(homepage.homepageWhyWeSection());
         verifications.expect().beVisibleVerification(homepage.homepageOurTechnologySlick_slider());
         verifications.expect().beVisibleVerification(homepage.homepageLatestProjectSection());
-
+        verifications.expect().beVisibleVerification(homepage.TheyTrustUsSection());
+        verifications.expect().beVisibleVerification(homepage.TestimonialsSection());
+        verifications.expect().beVisibleVerification(homepage.OurTeamSection());
+        verifications.expect().beVisibleVerification(homepage.SharingOurKnowledge())
+        verifications.expect().beVisibleVerification(homepage.ContactContainer());
 
     })
     it("Verify that latest projects' 'Read more' button is working properly",()=>{
@@ -62,16 +67,19 @@ describe("Tesvan Home Page", () => {
         homepage.customerTimesReadMoreButton().click({force:true})
         cy.url().should("eq","https://www.tesvan.com/en/cases/customertimes");
         cy.wait("@Customertimes");
+        homepage.casesHeader().contains("CUSTOMERTIMES").should("be.visible");
         homepage.logoTesvan().click();
         cy.wait("@TESVANHomePage");
         homepage.rockyMountainsReadMoreButton().click({force:true});
         cy.url().should("eq","https://www.tesvan.com/en/cases/rocky_mountains");
         cy.wait("@Rocky_mountains");
+        homepage.casesHeader().contains("ROCKY MOUNTAINS").should("be.visible")
         homepage.logoTesvan().click();
         cy.wait("@TESVANHomePage");
         homepage.summerizeReadMoreButton().click({force:true});
         cy.url().should("eq","https://www.tesvan.com/en/cases/summerize");
         cy.wait("@Summerize");
+        homepage.casesHeader().contains("SUMMERIZE").should("be.visible")
 
     })
 })

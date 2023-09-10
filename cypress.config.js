@@ -6,6 +6,8 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     e2e: {
         setTimeout:16000,
+        defaultCommandTimeout:16000,
+
 
         viewportWidth: 1920,
         viewportHeight: 1080,

@@ -20,8 +20,13 @@ export default new class selectors {
     homepageWhyWeSection =()=> cy.get("div[class='WhyWe_container__wBCP3']");
     homepageOurTechnologySlick_slider =()=> cy.xpath("//div[@dir='ltr'][.//div[@data-index='22']]")
     homepageLatestProjectSection =()=>cy.get("div[class='LatestProjects_container___02CQ']");
-    customerTimesReadMoreButton =()=> cy.get("[class=Case_hoverPart__nBgSs] button").eq(0);
-    rockyMountainsReadMoreButton =()=> cy.get("[class=Case_hoverPart__nBgSs] button").eq(2);
-    summerizeReadMoreButton =()=> cy.get("[class=Case_hoverPart__nBgSs] button").eq(1);
-
+    customerTimesReadMoreButton =()=> cy.xpath("//*[@id=\"__next\"]/div/div[3]/div[7]/div/div/div[2]/div[1]/div[1]/div/div/button");
+    rockyMountainsReadMoreButton =()=> cy.xpath("//*[@id=\"__next\"]/div/div[3]/div[7]/div/div/div[2]/div[1]/div[2]/div/div/button");
+    summerizeReadMoreButton =()=> cy.xpath("//*[@id=\"__next\"]/div/div[3]/div[7]/div/div/div[2]/div[1]/div[3]/div/div/button");
+    casesHeader=()=> cy.get("h1.HeaderContent_title__J10CV");
+    TheyTrustUsSection= ()=> cy.xpath("//*[@id=\"__next\"]/div/div[3]/div[7]/div/div/div[4]/div");
+    TestimonialsSection= ()=> cy.get("div[class='Testimonials_container__6YNup']");
+    OurTeamSection= ()=> cy.xpath("//*[@id=\"__next\"]/div/div[3]/div[8]/div/div/div[2]");
+    SharingOurKnowledge=()=> cy.get("div[class='SharingOurKnowledge_container__pq6IE']");
+    ContactContainer=()=>cy.get("div[class='Contact_container__KZnxh']");
 }
