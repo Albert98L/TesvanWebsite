@@ -89,7 +89,7 @@ describe("Tesvan Home Page", () => {
 
     });
 
-    it("Check the functionality of the 'SEND US A MESSAGE' container with the valid credentials", () => {
+    it.only("Check the functionality of the 'SEND US A MESSAGE' container with the valid credentials", () => {
         cy.waitUntil(() => homepage.contactModal());
         homepage.contactModalCloseButton().click();
         cy.wait(2000);
@@ -100,7 +100,7 @@ describe("Tesvan Home Page", () => {
         sendUs.Description().type(text);
         sendUs.IAgreeCheckbox().check();
         sendUs.SendMessageButton().click();
-        sendUs.ResponseMessages.should("be.visible");
+        sendUs.ResponseMessages().should("be.visible");
 
     });
 
