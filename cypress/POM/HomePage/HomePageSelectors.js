@@ -29,4 +29,6 @@ export default new class selectors {
     OurTeamSection= ()=> cy.xpath("//*[@id=\"__next\"]/div/div[3]/div[8]/div/div/div[2]");
     SharingOurKnowledge=()=> cy.get("div[class='SharingOurKnowledge_container__pq6IE']");
     ContactContainer=()=>cy.get("div[class='Contact_container__KZnxh']");
+    ARMLanguage=()=>cy.get('ul.LanguageMenu_languageList__KBDAV li:contains("arm")');
+    RULanguage=()=>cy.get('ul.LanguageMenu_languageList__KBDAV li:contains("ru")');
 }
