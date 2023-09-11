@@ -175,7 +175,7 @@ describe("Tesvan Home Page", () => {
         homepage.languageMenuButton().click();
         homepage.ARMLanguage().click();
         cy.wait("@ARMLanguage");
-        homepage.headerContent().contains("ՏԵՍՎԱՆ՝ ՈՐԱԿԻ ԸՆԿԵՐՈՒԹՅՈՒՆ").should("be.visible");
+        homepage.headerContent().contains("ՏԵՍՎԱՆ՝ ՈՐԱԿԻ ԸՆԿԵՐՈՒԹՅՈՒՆ").should("be.visible")
 
     })
 
