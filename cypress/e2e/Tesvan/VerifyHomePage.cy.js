@@ -89,7 +89,7 @@ describe("Tesvan Home Page", () => {
 
     });
 
-    it.only("Check the functionality of the 'SEND US A MESSAGE' container with the valid credentials", () => {
+    it("Check the functionality of the 'SEND US A MESSAGE' container with the valid credentials", () => {
         cy.waitUntil(() => homepage.contactModal());
         homepage.contactModalCloseButton().click();
         cy.wait(2000);
