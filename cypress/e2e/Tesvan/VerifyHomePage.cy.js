@@ -13,7 +13,7 @@ describe("Tesvan Home Page", () => {
     beforeEach(() => {
         functions.homeurl();
         cy.intercept("HEAD", "en").as("TESVANHomePage");
-        cy.intercept("GET", "/video/Homepage.mp4").as("BackVideo");
+        cy.intercept("GET", "video/Homepage.mp4").as("BackVideo");
         cy.intercept("HEAD", "en/cases/customertimes").as("Customertimes");
         cy.intercept("HEAD", "en/cases/rocky_mountains").as("Rocky_mountains");
         cy.intercept("HEAD", "en/cases/summerize").as("Summerize");
@@ -47,8 +47,6 @@ describe("Tesvan Home Page", () => {
     });
 
     it("Background Video Loading Test", () => {
-        cy.waitUntil(() => homepage.contactModal());
-        homepage.contactModalCloseButton().click();
         cy.wait("@BackVideo", {timeout: 16000});
         homepage.videoLoop().should("have.attr", "loop");
         homepage.bannerVideo().should("have.attr", "src").and("not.be.empty");
