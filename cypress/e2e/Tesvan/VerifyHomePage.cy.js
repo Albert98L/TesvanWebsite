@@ -177,8 +177,6 @@ describe("Tesvan Home Page", () => {
         cy.wait("@ARMLanguage");
         homepage.headerContent().contains("ՏԵՍՎԱՆ՝ ՈՐԱԿԻ ԸՆԿԵՐՈՒԹՅՈՒՆ").should("be.visible");
 
-
-
     })
 
 })
