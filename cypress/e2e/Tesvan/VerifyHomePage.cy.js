@@ -100,7 +100,7 @@ describe("Tesvan Home Page", () => {
         sendUs.Description().type(text);
         sendUs.IAgreeCheckbox().check();
         sendUs.SendMessageButton().click();
-        sendUs.ResponseMessages.should("be.visible");
+        sendUs.ResponseMessages().should("be.visible");
 
     });
 
