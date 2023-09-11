@@ -47,6 +47,8 @@ describe("Tesvan Home Page", () => {
     });
 
     it("Background Video Loading Test", () => {
+        cy.waitUntil(() => homepage.contactModal());
+        homepage.contactModalCloseButton().click();
         cy.wait("@BackVideo", {timeout: 16000});
         homepage.videoLoop().should("have.attr", "loop");
         homepage.bannerVideo().should("have.attr", "src").and("not.be.empty");
