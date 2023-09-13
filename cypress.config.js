@@ -8,6 +8,14 @@ module.exports = defineConfig({
         setTimeout:16000,
         defaultCommandTimeout:16000,
 
+        env: {
+            "TesvanHomePage": "https://www.tesvan.com/en",
+            "Customertimes":"https://www.tesvan.com/en/cases/customertimes",
+            "Rocky-mountains":"https://www.tesvan.com/en/cases/rocky_mountains",
+            "Summerize":"https://www.tesvan.com/en/cases/summerize",
+
+
+        },
 
         viewportWidth: 1920,
         viewportHeight: 1080,

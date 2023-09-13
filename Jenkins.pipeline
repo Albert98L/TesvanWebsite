@@ -10,6 +10,6 @@ options {
     }
 
             stage('Run tests') {
-                 bat  "npx cypress run --spec 'cypress/e2e/TesvanHomePage/VerifyHomePage.cy.js'"
+                 bat  "npx cypress run --spec 'cypress/e2e/TesvanHomePage/TesvanHomePage.cy.js'"
            }
       }
