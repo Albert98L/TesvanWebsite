@@ -12,7 +12,16 @@ let text = sendUs.randomText(20);
 describe("Tesvan Home Page", () => {
     beforeEach(() => {
         functions.homeurl();
+<<<<<<< HEAD:cypress/e2e/Tesvan/TesvanHomePage.cy.js
         wait.intecept();
+=======
+        cy.intercept("HEAD", "en").as("TESVANHomePage");
+        cy.intercept("GET", "video/Homepage.mp4").as("BackVideo");
+        cy.intercept("HEAD", "en/cases/customertimes").as("Customertimes");
+        cy.intercept("HEAD", "en/cases/rocky_mountains").as("Rocky_mountains");
+        cy.intercept("HEAD", "en/cases/summerize").as("Summerize");
+        cy.intercept("GET","/am").as("ARMLanguage")
+>>>>>>> de91fcb87fddad31f8016d21059e08656ca9026c:cypress/e2e/Tesvan/VerifyHomePage.cy.js
     });
 
 
@@ -47,6 +56,13 @@ describe("Tesvan Home Page", () => {
 
     });
 
+<<<<<<< HEAD:cypress/e2e/Tesvan/TesvanHomePage.cy.js
+=======
+    it("Background Video Loading Test", () => {
+        homepage.videoLoop().should("have.attr", "loop");
+        homepage.bannerVideo().should("have.attr", "src").and("not.be.empty");
+    });
+>>>>>>> de91fcb87fddad31f8016d21059e08656ca9026c:cypress/e2e/Tesvan/VerifyHomePage.cy.js
 
     it("Check if all home page sections are available", () => {
         cy.wait("@TESVANHomePage");
